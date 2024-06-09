@@ -1,38 +1,105 @@
-.App {
+.main {
+  width: 90vw;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+#title {
+  width: 40vw;
+  margin: 0 auto;
   text-align: center;
+  margin-top: 3vw;
+  font-size: 3vw;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+td {
+  border: 1px solid #eaeaea;
+  text-align: center;
+  padding: 8px;
+}
+
+th {
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #F9F9F8;
+}
+
+.small-line {
+  border: none;
+  border-top: 2px solid #969696;
+  /* Adjust the color as needed */
+  width: 1vw;
+  /* Adjust the width as needed */
+  margin: 1rem auto;
+  /* Center the line horizontally */
+}
+
+@media screen and (max-width: 780px) {
+  .part-1 {
+      display: none;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media screen and (min-width: 780px) {
+  .part-2 {
+      display: none;
+  }
 }
 
-.App-link {
-  color: #61dafb;
+.accordion {
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: 2px solid #eee;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.active, .accordion:hover {
+  background-color: #fff;
+}
+
+.accordion::after {
+  content: '\002B';
+  color: #000;
+  font-weight: bold;
+  float: left;
+  margin-right: 10px; /* Adjust this value as needed for more or less spacing */
+  margin-top: 2px; /* Optional: adjust vertical alignment if needed */
+}
+
+/* Ensure this style applies to the active state as well */
+.accordion.active::after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  border: 2px solid #eee;
+  border-top: none;
+}
+
+.part-2{
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
 }
